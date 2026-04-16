@@ -1,0 +1,106 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Texto do item */
+.item span {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Input menor e alinhado */
+.item input {
+    width: 70px;
+    padding: 6px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container principal */
+main {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Itens do cardápio */
+p {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #ff7e5f;
+    outline: none;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #ff7e5f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e8654d;
+}
+
+/* Resultado */
+#resultado {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+}
+
+/* Label */
+label {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
