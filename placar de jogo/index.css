@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+    font-family: 'Fredoka One', cursive;
+    background: linear-gradient(135deg, #ffe6f0, #ffccf2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+header h1 {
+    color: #ff4da6;
+    font-size: 3em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px #ffb3d9;
+}
+
+.placar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.time {
+    background-color: #fff0f5;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 77, 166, 0.4);
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.time:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255, 77, 166, 0.6);
+}
+
+.time input {
+    font-size: 20px;
+    padding: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid #ff99cc;
+    width: 140px;
+}
+
+.time p {
+    font-size: 60px;
+    margin: 20px 0;
+    color: #ff4da6;
+    text-shadow: 1px 1px 5px #ffb3d9;
+}
+
+.botoes button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-mais {
+    background-color: #ff66b2;
+    color: white;
+}
+
+.btn-mais:hover {
+    background-color: #ff3399;
+}
+
+.btn-menos {
+    background-color: #ffb3d9;
+    color: white;
+}
+
+.btn-menos:hover {
+    background-color: #ff80c1;
+}
+
+.btn-reset {
+    background-color: #ff4da6;
+    color: white;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-reset:hover {
+    background-color: #ff1a75;
+}
+
+.mensagem {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 30px;
+    color: #ff3399;
+}
