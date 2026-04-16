@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo da página */
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa principal */
+main {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1e3c72;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Inputs de data */
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+input[type="datetime-local"]:focus {
+    border-color: #2a5298;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    margin-right: 5px;
+    margin-top: 8px;
+}
+
+/* Botão */
+input[type="button"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+input[type="button"]:hover {
+    background: #1e3c72;
+}
+
+/* Resultado */
+#resp {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2a5298;
+    text-align: center;
+}
