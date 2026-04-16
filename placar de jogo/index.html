@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar Rosa</title>
+    <link rel="stylesheet" href="placar.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🌸 Placar do Jogo 🌸</h1>
+    </header>
+
+    <main>
+        <div class="placar">
+            <div class="time time-a">
+                <input type="text" id="nomeA" placeholder="Time A">
+                <p id="placarA">0</p>
+                <div class="botoes">
+                    <button class="btn-mais" onclick="adicionarPonto('A')">+1</button>
+                    <button class="btn-menos" onclick="subtrairPonto('A')">-1</button>
+                </div>
+            </div>
+
+            <div class="time time-b">
+                <input type="text" id="nomeB" placeholder="Time B">
+                <p id="placarB">0</p>
+                <div class="botoes">
+                    <button class="btn-mais" onclick="adicionarPonto('B')">+1</button>
+                    <button class="btn-menos" onclick="subtrairPonto('B')">-1</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mensagem" class="mensagem"></div>
+
+        <button class="btn-reset" onclick="resetarTudo()">Resetar Tudo</button>
+    </main>
+</div>
+
+<script src="placar.js"
