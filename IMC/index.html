@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular imc</title>
+    <link rel="stylesheet" href="bhaskara.css">
+    <link rel="stylesheet" href="imc.css">
+</head>
+
+<body>
+
+    <header>
+        CALCULE SEU IMC GRATUITAMENTE!
+    </header> 
+   
+    <main> 
+        <table border="1">
+    <tr>
+        <th>IMC</th>
+        <th>Classificação</th>
+    </tr>
+    <tr id="l1"><td>Menor que 18.5</td><td>Abaixo do peso</td></tr>
+    <tr id="l2"><td>18.5 até 24.9</td><td>Peso normal</td></tr>
+    <tr id="l3"><td>25.0 até 29.9</td><td>Sobrepeso</td></tr>
+    <tr id="l4"><td>30.0 até 34.9</td><td>Obesidade grau I</td></tr>
+    <tr id="l5"><td>35.0 até 39.9</td><td>Obesidade grau II</td></tr>
+    <tr id="l6"><td>40.0 ou mais</td><td>Obesidade grau III</td></tr>
+</table>
+        <section>
+            <h1>Calcular seu IMC!</h1>               
+
+            <label for="inputA">Insira seu peso</label>                
+            <input type="number" id="inputA">
+
+            <label for="inputB">Insira sua altura</label>
+            <input type="number" id="inputB" step="any">
+
+            <button onclick="funcaoCalcular()">Calcular</button>
+
+            <div class="resultado">
+             <p><strong>imc=</strong></p>
+             <span id="resposta">0</span>
+            </div>
+        </section>
+    </main>
+ 
+ 
+    <footer id="footer">
+        <span id="mensagem">Preencha os valores e calcule</span>
+    </footer>
+
+    <script src="imc.js"></script>
+
+
+</body>
+
+</html>
