@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular média </title>
+    <link rel="stylesheet" href="notas.css">
+</head>
+
+<body>
+    <div class="formúlario">
+        <h1>Média de aproveitamento e classificação</h1>
+    </div>
+    <div class="formulario">
+        <div><table border="1">
+            <tr>
+                <th>Média de notas</th>
+                <th>Classificação</th>
+            </tr>
+            <tr id="l1">
+                <td> >=9.0</td>
+                <td>Conceito A</td>
+            </tr>
+            <tr id="l2">
+                <td> >=7.5 e &lt;9.0 </td>
+                <td>Conceito B</td>
+            </tr>
+            <tr id="l3">
+                <td> >=6.0 e &lt;7.5 </td>
+                <td>Conceito C</td>
+            </tr>
+            <tr id="l4">
+                <td> >=4.0 e &lt;6.0</td>
+                <td>Conceito D</td>
+            </tr>
+            <tr id="l5">
+                <td> >=4.0</td>
+                <td>Conceito E</td>
+            </tr>
+        </table></div>
+        <div class="formulario2">
+        <label for="inputA">Nome do aluno:</label><br>
+        <input type="text" id="inputA">
+        <br>
+        <br>
+        <label for="inputB">RA:</label>
+        <input type="number" id="inputB">
+        <br>
+        <br>
+        <label for="inputC">Nota 1:</label>
+        <input type="number" id="inputC">
+        <br>
+        <label for="inputD">Nota 2:</label>
+        <input type="number" id="inputD">
+        <br>
+        <label for="inputE">Nota 3:</label>
+        <input type="number" id="inputE">
+        <br>
+        <label for="inputF">Nota 4:</label>
+        <input type="number" id="inputF">
+        <br>
+        <label for="inputG">Média de exercícios:</label>
+        <input type="number" id="inputG">
+        <br>
+        <br>
+        <input type="button" id="Calcular" value="Calcular" onclick="funcaoCalcular()">
+        <br></div>
+        <div class="formulario2"><br>
+        <label for="resp">RA:</label>
+        <span id="resp">0</span>
+        <br>
+        <label for="resp1">Nome:</label>
+        <span id="resp1">0</Span>
+        <br>
+        <label for="resp2">Notas:</label>
+        <span id="resp2">0</Span>
+        <br>
+        <label for="resp3">Média dos exercícios:</label>
+        <span id="resp3">0</Span>
+        <br>
+        <label for="resp4">Conceito:</label>
+        <span id="resp4">0</span>
+        <br>
+        <label for="resp5">Situação:</label>
+        <span id="resp5">0</span></div>
+    </div>
+    </div>
+    <script src="notas.js"></script>
+</body>
+
+</html>
