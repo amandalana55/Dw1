@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>página 2</title>
+</head>
+<body>
+
+    <h1>Olá</h1>
+    
+    <p><strong>Seja bem-vindo! </strong> <span id="resultadoNome"></span></p>
+
+    <script>
+        // 1. Pegamos tudo que vem depois do "?" na URL da página
+        var parametrosDaUrl = new URLSearchParams(window.location.search);
+
+        // 2. Extraímos os valores usando os mesmos nomes ('name') que colocamos no formulário
+        var nomeRecebido = parametrosDaUrl.get('nome');
+        // 3. Colocamos esses valores nos espaços (<span>) que criamos no HTML acima
+        document.getElementById('resultadoNome').textContent = nomeRecebido;
+    </script>
+
+    <br>
+    <a href="pag1.html">Voltar para a página 1</a>
+
+</body>
+</html>
