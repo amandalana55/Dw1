@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Autorização de viagem</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Autorização de viagem esportiva</h1>
+        </header>
+        
+        <section>
+            <form action="autorizacao.html" method="GET" onsubmit="return formulario()">
+                <div class="campo">
+                    <label for="cpf">CPF do atleta:</label>
+                    <input type="number" id="cpf" name="cpf" required>
+                </div>
+
+                <input type="hidden" id="categoria" name="categoria"> 
+
+                <div class="campo">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" required>
+                </div>
+
+                <div class="campo">
+                    <label for="nomeR">Nome do responsável:</label>
+                    <input type="text" id="nomeR" name="nomeR" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cidadeO">Cidade de origem:</label>
+                    <input type="text" id="cidadeO" name="cidadeO" required>
+                </div>
+
+                  <div class="campo">
+                    <label for="cidadeD">Cidade de destino:</label>
+                    <input type="text" id="cidadeD" name="cidadeD" required>
+                </div>
+
+                  <div class="campo">
+                    <label for="modalidades">Modalidade esportiva:</label>
+                </div>
+
+                <label for="modalidades">Escolha uma opção:</label>
+
+<select id="modalidades" name="modalidades">
+    <option>-- Selecione --</option>
+    <option>Volêi</option>
+    <option>Futebol</option>
+    <option>Xadrez</option>
+    <option>Basquete</option>
+<button onclick="mostrarOpcao()">Confirmar</button>
+</select>
+
+<p id="resultado"></p>
+
+                <button type="submit">Gerar Documento Oficial</button>
+            </form>
+        </section>
+    </main>
+    <script>
+function formulario(){
+let idade= parseInt(document.getElementById("idade").value); 
+let cpf= document.getElementById("cpf").value;
+let valido= true
+ if(isNaN(idade) || cpf.length!=11){
+   alert ("CPF inválido ou idade inválida") 
+   valido=false
+ }else{
+    let categoria= ""
+ if (idade>=7 && idade<=11){
+    categoria= "Infantil"
+    }else if(idade>=12 && idade<=13){
+        categoria= "Pré-adolescente"
+    }else if (idade>=14 && idade<=18){
+        categoria= "Adolescente"
+    }else{
+        categoria="Idade inválida"
+    }
+    document.getElementById("categoria").value= categoria;
+ }
+ return valido;
+}
+
+    </script>
+</body>
+</html>
