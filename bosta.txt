@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inputA">Escreva um número</label>
+    <input type="number" id="inputA">
+    <br>
+    <br>
+    <label for="inputB">Escreva um número</label>
+    <input type="number" id="inputB">
+    <br>
+    <br>
+    <label for="inputC">Escreva um número</label>
+    <input type="number" id="inputC">
+    <br>
+    <br>
+    <label for="sla">escolha uma função:</label>
+    <input type="button" value="geométrica" onclick="funcaogeo()">
+    <input type="button" value="ponderada" onclick="funcaoponde()">
+    <input type="button" value="harmonica" onclick="funcaoharm()">
+    <input type="button" value="aritmética" onclick="funcaoari()">
+    <br>
+    <br>
+    <label for="resp">resposta=</label>
+    <span id="resp">0</span>
+    <script>
+        function funcaogeo(){
+    let x=parseFloat(document.getElementById("inputA").value);
+    let y=parseFloat(document.getElementById("inputB").value);
+    let z=parseFloat(document.getElementById("inputc").value);
+    let g= Math.cbrt(x*y*z);
+    document.getElementById("resp").innerHTML= g;
+}
+    function funcaoponde(){
+    let x=parseFloat(document.getElementById("inputA").value);
+    let y=parseFloat(document.getElementById("inputB").value);
+    let z=parseFloat(document.getElementById("inputc").value);
+    let p= x+2*y+3*z/6;
+    document.getElementById("resp").innerHTML= p;
+}   
+    function funcaoharm(){
+    let x=parseFloat(document.getElementById("inputA").value);
+    let y=parseFloat(document.getElementById("inputB").value);
+    let z=parseFloat(document.getElementById("inputc").value);
+    let h= 1/(1/x)+(1/y)+(1/z);
+    document.getElementById("resp").innerHTML= h;
+}
+ function funcaoari(){
+    let x=parseFloat(document.getElementById("inputA").value);
+    let y=parseFloat(document.getElementById("inputB").value);
+    let z=parseFloat(document.getElementById("inputc").value);
+    let a= x+y+z/3;
+    document.getElementById("resp").innerHTML= a;
+}
+    </script>
+</body>
+</html>
