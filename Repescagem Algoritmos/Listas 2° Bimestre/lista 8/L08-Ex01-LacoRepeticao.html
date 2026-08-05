@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Repetir um nome 10 vezes</h1>
+</head>
+<body>
+    <label for="inputA">Nome:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar(){
+    let nome= document.getElementById("inputA").value;
+    document.getElementById("resp").innerHTML= "";
+    for (let i = 1; i <= 10; i++) {
+    document.getElementById("resp").innerHTML += nome + "<br>";
+}
+        }
+    </script>
+</body>
+</html>

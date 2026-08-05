@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+ <title>Compactação de Estrutura</title>
+</head>
+<body>
+    <h1>Compactação de Estrutura</h1>
+    <input type="button" value="Executar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label>Vetor A:</label><br>
+    <span id="A"></span>
+    <br>
+    <br>
+    <label>Vetor B:</label><br>
+    <span id="B"></span>
+    <script>
+        function funcaoexecutar() {
+
+            let vetorA = [];
+            let vetorB = [];
+            for (let i = 0; i < 100; i++) {
+                vetorA[i] = Math.floor(Math.random() * 101) - 50;
+            }
+            let j = 0;
+            for (let i = 0; i < 100; i++) {
+                if (vetorA[i] > 0) {
+                    vetorB[j] = vetorA[i];
+                    j++;
+                }
+            }
+            document.getElementById("A").innerHTML = vetorA.join(" ");
+            document.getElementById("B").innerHTML = vetorB.join(" ");
+        }
+    </script>
+</body>
+</html>

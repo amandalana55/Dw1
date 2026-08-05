@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<h1>Ordem crescente</h1>
+</head>
+<body>
+<label>Digite os números separados por espaço:</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Ordenar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Resposta:</label>
+<span id="resp"></span>
+<script>
+function funcaoexecutar(){
+    let frase = document.getElementById("inputA").value;
+    let numeros = frase.split(" ");
+    for(let i = 0; i < numeros.length; i++){
+        numeros[i] = parseInt(numeros[i]);
+    }
+    for(let i = 0; i < numeros.length; i++){
+        for(let j = i + 1; j < numeros.length; j++){
+            if(numeros[i] > numeros[j]){
+                let aux = numeros[i];
+                numeros[i] = numeros[j];
+                numeros[j] = aux;
+            }
+        }
+    }
+    document.getElementById("resp").innerHTML = numeros.join(" ");
+}
+
+</script>
+
+</body>
+</html>

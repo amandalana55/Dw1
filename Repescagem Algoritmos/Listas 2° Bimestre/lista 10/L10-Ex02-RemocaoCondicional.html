@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Retirar vogais</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma palavra:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Palavra sem vogais:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let palavra = document.getElementById("inputA").value.toLowerCase();
+            let letras= palavra.split("");
+            let retirar = "";
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 0; i < letras.length; i++) {
+                if (palavra[i]!= 'a' && palavra[i]!= 'e' && palavra[i]!= 'i' && palavra[i]!= 'o' && palavra[i]!= 'u' && palavra[i]!= " ") {
+                    retirar+=palavra[i];
+                }
+            }
+            document.getElementById("resp").innerHTML = retirar;
+        }
+    </script>
+</body>
+
+</html>

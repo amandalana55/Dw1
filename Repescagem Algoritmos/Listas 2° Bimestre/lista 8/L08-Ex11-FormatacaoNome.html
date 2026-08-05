@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Formatação de nome em inglês</h1>
+</head>
+<body>
+    <label for="inputA">Digite o nome completo:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaonomeEmIngles()">
+    <br>
+    <br>
+    <label for="resp">Nome em inglês:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaonomeEmIngles() {
+            let nome = document.getElementById("inputA").value;
+            let partes = nome.split(" ");
+            let sobrenome = partes[partes.length - 1];
+            let restante = partes.slice(0, partes.length-1);
+            restante = restante.join(" ");
+            document.getElementById("resp").innerHTML= sobrenome + ", " + restante;
+
+        }
+    </script>
+</body>
+</html>

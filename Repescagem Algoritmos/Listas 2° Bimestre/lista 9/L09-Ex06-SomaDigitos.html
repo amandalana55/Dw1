@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Soma de dígitos</h1>
+</head>
+<body>
+    <label for="inputA">Digite um número inteiro positivo:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let numero = document.getElementById("inputA").value;
+            let contador= 0;
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 0; i < numero.length; i++) {
+                contador= contador+ parseInt(numero[i]);
+            }
+            document.getElementById("resp").innerHTML = contador;
+        }
+    </script>
+</body>
+</html>

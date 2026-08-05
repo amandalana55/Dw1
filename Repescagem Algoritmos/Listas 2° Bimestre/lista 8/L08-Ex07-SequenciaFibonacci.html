@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>fibonacci</h1>
+</head>
+<body>
+    <label for="inputA">Digite um número:</label>
+    <input type="number" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let numero = parseFloat(document.getElementById("inputA").value);
+            let resultado = 0;
+            let anterior = 0;
+            let atual = 1;
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 1; i <= numero; i++) {
+                if (i == 1) {
+                    resultado = 0;
+                }
+                else if (i == 2) {
+                    resultado = 1;
+                } else {
+                    resultado = anterior + atual;
+                    anterior = atual;
+                    atual = resultado;
+                }
+                document.getElementById("resp").innerHTML += resultado + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>

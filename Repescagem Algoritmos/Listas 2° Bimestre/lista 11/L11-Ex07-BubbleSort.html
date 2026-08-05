@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h1>Bubble Sort sem usar ".sort()"</h1>
+</head>
+<body>
+<label>Digite os números separados por espaço:</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Ordenar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Vetor ordenado:</label>
+<span id="resp"></span>
+<script>
+function funcaoexecutar(){
+    let vetor = document.getElementById("inputA").value.split(" ");
+    for(let i = 0; i < vetor.length; i++){
+        vetor[i] = parseInt(vetor[i]);
+    }
+
+    for(let i = 0; i < vetor.length - 1; i++){
+        for(let j = 0; j < vetor.length - 1; j++){
+            if(vetor[j] > vetor[j + 1]){
+                let aux = vetor[j];
+                vetor[j] = vetor[j + 1];
+                vetor[j + 1] = aux;
+            }
+        }
+    }
+    document.getElementById("resp").innerHTML = vetor.join(" ");
+}
+</script>
+</body>
+</html>

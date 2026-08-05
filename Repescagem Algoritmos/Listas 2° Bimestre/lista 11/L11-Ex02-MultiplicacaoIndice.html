@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<h1>Multiplicação por Índice</h1>
+</head>
+<body>
+<label>Digite o primeiro vetor de 10 posições(utilize um espaço para cada número):</label>
+<input type="text" id="inputA">
+<br><br>
+<label>Digite o segundo vetor de 10 posições(utilize um espaço para cada número):</label>
+<input type="text" id="inputB">
+<br>
+<br>
+<input type="button" value="Calcular" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Resultado:</label>
+<span id="resp"></span>
+<script>
+function funcaoexecutar(){
+    let vetor1 = document.getElementById("inputA").value.split(" ");
+    let vetor2 = document.getElementById("inputB").value.split(" ");
+    let vetor3 = [];
+    for(let i = 0; i < 10; i++){
+        vetor1[i] = parseInt(vetor1[i]);
+        vetor2[i] = parseInt(vetor2[i]);
+        vetor3[i] = vetor1[i] * vetor2[i];
+    }
+    document.getElementById("resp").innerHTML = vetor3.join(" ");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <h1>Separar números pares e ímpares</h1>
+</head>
+<body>
+<label>Digite os números separados por espaço:</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Verificar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Pares:</label>
+<span id="resp"></span>
+<br>
+<br>
+<label>Ímpares:</label>
+<span id="resp1"></span>
+<script>
+function funcaoexecutar(){
+    let vetor = document.getElementById("inputA").value.split(" ");
+    let pares = [];
+    let impares = [];
+    for(let i = 0; i < vetor.length; i++){
+        vetor[i] = parseInt(vetor[i]);
+        if(vetor[i] % 2 == 0){
+            pares.push(vetor[i]);
+        }else{
+            impares.push(vetor[i]);
+        }
+    }
+    document.getElementById("resp").innerHTML = pares.join(" ");
+    document.getElementById("resp1").innerHTML = impares.join(" ");
+}
+</script>
+</body>
+</html>

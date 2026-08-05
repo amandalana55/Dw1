@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Retirar caracteres repetidos</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma palavra:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="verificar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+         let palavra = document.getElementById("inputA").value.toLowerCase();
+         let letra = palavra.split("");
+         let novapalavra= "";
+            document.getElementById("resp").innerHTML = "";
+        for (let i = 0; i < palavra.length; i++) {
+        let repetida = false;
+        for (let j = 0; j < novapalavra.length; j++) {
+        if (palavra[i] == novapalavra[j]) {
+            repetida = true;
+        }
+      }
+        if (repetida == false) {
+        novapalavra += palavra[i];
+        }
+    }
+   document.getElementById("resp").innerHTML= novapalavra;
+ }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Maior e menor palavra</h1>
+</head>
+
+<body>
+    <label for="inputA">Digite uma frase:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="verificar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Maior palavra:</label>
+    <span id="resp"></span>
+    <br>
+    <br>
+    <label for="resp1">Menor palavra:</label>
+    <span id="resp1"></span>
+    <script>
+        function funcaoexecutar() {
+         let frase = document.getElementById("inputA").value.toLowerCase();
+         let palavras = frase.split(" ");
+
+        let palavramaior = palavras[0];
+        let palavramenor = palavras[0];
+            document.getElementById("resp").innerHTML = "";
+        for (let i = 0; i < palavras.length; i++) {
+        if (palavras[i].length > palavramaior.length) {
+        palavramaior = palavras[i];
+        }
+
+         if (palavras[i].length < palavramenor.length) {
+        palavramenor = palavras[i];
+        }
+    }
+            document.getElementById("resp").innerHTML= palavramaior;
+            document.getElementById("resp1").innerHTML= palavramenor;
+ }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h1>Separação por Índices</h1>
+</head>
+<body>
+<label>Digite 10 números separados por espaço:</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Separar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Índices pares:</label>
+<span id="resp"></span>
+<br>
+<br>
+<label>Índices ímpares:</label>
+<span id="resp1"></span>
+<script>
+function funcaoexecutar(){
+    let vetor = document.getElementById("inputA").value.split(" ");
+    let vetorPar = [];
+    let vetorImpar = [];
+    let p = 0;
+    let im = 0;
+
+    for(let i = 0; i < vetor.length; i++){
+        if(i % 2 == 0){
+            vetorPar[p] = vetor[i];
+            p++;
+        }else{
+            vetorImpar[im] = vetor[i];
+            im++;
+        }
+    }
+    document.getElementById("resp").innerHTML = vetorPar.join(" ");
+    document.getElementById("resp1").innerHTML = vetorImpar.join(" ");
+}
+</script>
+</body>
+</html>

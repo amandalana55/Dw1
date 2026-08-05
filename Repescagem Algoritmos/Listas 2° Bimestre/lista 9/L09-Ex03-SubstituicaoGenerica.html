@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Substituir letras</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma frase:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <label for="inputB">Digite a letra que deseja substituir:</label>
+    <input type="text" id="inputB">
+    <br>
+    <br>
+    <label for="inputC">Digite o caractere:</label>
+    <input type="text" id="inputC">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let frase = document.getElementById("inputA").value;
+            let letra = document.getElementById("inputB").value;
+            let caractere = document.getElementById("inputC").value;
+            let novafrase= "";
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 0; i < frase.length; i++) {
+                if(frase[i]==letra){
+                   novafrase += caractere;
+                }else{
+                    novafrase += frase[i];
+                }
+            }
+            document.getElementById("resp").innerHTML= novafrase;
+        }
+    </script>
+</body>
+
+</html>

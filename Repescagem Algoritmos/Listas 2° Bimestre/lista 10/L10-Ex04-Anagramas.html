@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Anagrama</h1>
+</head>
+<body>
+    <label for="inputA">Palavra 1:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <label for="inputB">Palavra 2:</label>
+    <input type="text" id="inputB">
+    <br>
+    <br>
+    <input type="button" value="verificar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let palavra1 = document.getElementById("inputA").value.toLowerCase();
+            let palavra2 = document.getElementById("inputB").value.toLowerCase();
+
+            let letra1 = palavra1.split("");
+            let letra2 = palavra2.split("");
+
+            letra1.sort();
+            letra2.sort();
+
+            palavra1 = letra1.join("");
+            palavra2 = letra2.join("");
+
+            if (palavra1 == palavra2) {
+            document.getElementById("resp").innerHTML = "São anagramas";
+            } else {
+            document.getElementById("resp").innerHTML = "Não são anagramas";
+            }
+        }
+    </script>
+</body>
+
+</html>

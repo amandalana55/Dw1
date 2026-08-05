@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Cifra de César</h1>
+</head>
+<body>
+    <label>Digite uma palavra:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <label>Digite a chave (uma letra):</label>
+    <input type="text" id="inputB">
+    <br>
+    <br>
+    <input type="button" value="Criptografar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label>Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let palavra = document.getElementById("inputA").value.toLowerCase();
+            let chave = document.getElementById("inputB").value.toLowerCase();
+            let rotacao = chave.charCodeAt(0) - 96;
+            let novaPalavra = "";
+            for (let i = 0; i < palavra.length; i++) {
+                let ascii = palavra.charCodeAt(i);
+                if (ascii >= 97 && ascii <= 122) {
+                    ascii = ascii + rotacao;
+                    if (ascii > 122) {
+                        ascii = ascii - 26;
+                    }
+                    novaPalavra += String.fromCharCode(ascii);
+                } else {
+                    novaPalavra += palavra[i];
+                }
+            }
+            document.getElementById("resp").innerHTML = novaPalavra;
+        }
+    </script>
+</body>
+</html>

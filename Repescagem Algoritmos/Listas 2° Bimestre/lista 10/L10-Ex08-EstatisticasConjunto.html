@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Estatísticas de Conjunto</h1>
+</head>
+<body>
+    <label for="inputA">Digite os números (com espaço entre eles):</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="verificar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+         let frase = document.getElementById("inputA").value;
+         let numeros = frase.split(" ");
+         let soma = 0;
+         let positivos = 0;
+         let negativos = 0;
+        document.getElementById("resp").innerHTML = "";
+        for (let i = 0; i < numeros.length; i++) {
+        let numero = parseFloat(numeros[i]);
+         soma += numero;
+         if (numero > 0) {
+         positivos++;
+        }else if (numero<0){
+            negativos++
+         }
+     }
+        let media = soma / numeros.length;
+        let percPositivos = (positivos / numeros.length) * 100;
+        let percNegativos = (negativos / numeros.length) * 100;
+        document.getElementById("resp").innerHTML =
+        "Média: " + media.toFixed(2) + "<br>" +
+        "Positivos: " + positivos + "<br>" +
+        "Negativos: " + negativos + "<br>" +
+        "% Positivos: " + percPositivos.toFixed(2) + "%<br>" +
+        "% Negativos: " + percNegativos.toFixed(2) + "%";
+ }
+    </script>
+</body>
+
+</html>

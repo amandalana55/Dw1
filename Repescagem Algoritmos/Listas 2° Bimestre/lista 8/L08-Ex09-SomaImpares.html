@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Contagem de números ímpares</h1>
+</head>
+<body>
+    <label for="inputA">Digite um número:</label>
+    <input type="number" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Números ímpares:</label>
+    <span id="resp"></span>
+    <br>
+    <br>
+    <label for="resp1">Soma:</label>
+    <span id="resp1"></span>
+    <script>
+        function funcaoexecutar() {
+            let numero = parseFloat(document.getElementById("inputA").value);
+            let soma= 0;
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 1; i <= numero; i++) {
+                if (i % 2 != 0) {
+                    soma+= i;
+                    document.getElementById("resp").innerHTML += i + "<br>";
+                }
+                
+            }
+             document.getElementById("resp1").innerHTML = soma;
+        }
+    </script>
+</body>
+</html>

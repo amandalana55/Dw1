@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <h1>Contagem de Pares</h1>
+</head>
+<body>
+<label>Digite os números separados por espaço:</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Verificar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Resposta:</label>
+<br>
+<span id="resp"></span>
+<script>
+function funcaoexecutar(){
+    let frase = document.getElementById("inputA").value;
+    let vetor = frase.split(" ");
+    let pares = 0;
+    for(let i = 0; i < vetor.length; i++){
+        vetor[i] = parseInt(vetor[i]);
+        if(vetor[i] % 2 == 0){
+            pares++;
+        }
+    }
+    document.getElementById("resp").innerHTML =
+        "Vetor: " + vetor.join(" ") + "<br>" +
+        "Quantidade de pares: " + pares;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Loteria Esportiva</title>
+</head>
+<body>
+    <h2>Validador de Loteria Esportiva</h2>
+    Nome:
+    <input type="text" id="nome"><br><br>
+    Endereço:
+    <input type="text" id="endereco"><br><br>
+    Apostas (13 números de 1 a 3 separados por espaço):<br>
+    <input type="text" id="apostas" size="40"><br><br>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <br>
+    <br>
+    <div id="resultado"></div>
+    <h1 id="ganhador"></h1>
+
+    <script>
+        function verificar() {
+
+            let gabarito = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1];
+            let nome = document.getElementById("nome").value;
+            let endereco = document.getElementById("endereco").value;
+            let apostas = document.getElementById("apostas").value.split(" ");
+            let acertos = 0;
+
+            for (let i = 0; i < 13; i++) {
+                if (parseInt(apostas[i]) == gabarito[i]) {
+                    acertos++;
+                }
+            }
+            document.getElementById("resultado").innerHTML =
+                "Nome: " + nome +
+                "<br>Endereço: " + endereco +
+                "<br>Acertos: " + acertos;
+            if (acertos == 13) {
+                document.getElementById("ganhador").innerHTML = "Ganhador";
+            } else {
+                document.getElementById("ganhador").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

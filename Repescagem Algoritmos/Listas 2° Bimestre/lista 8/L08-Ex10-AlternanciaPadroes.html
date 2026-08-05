@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Alternância de nome e sobrenome</h1>
+</head>
+<body>
+    <label for="inputA">Digite um nome:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <label for="inputB">Digite um sobrenome:</label>
+    <input type="text" id="inputB">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let nome = document.getElementById("inputA").value;
+            let sobrenome = document.getElementById("inputB").value;
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 1; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    sobrenome + nome;
+                    document.getElementById("resp").innerHTML += sobrenome + " " + nome + "<br>";
+                } else {
+                    document.getElementById("resp").innerHTML += nome + " " + sobrenome + "<br>";
+                }
+
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<h1>Iniciais Refinadas</h1>
+</head>
+<body>
+<label>Digite um nome completo (apenas um espaçamento para cada letra):</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Verificar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Resposta:</label>
+<span id="resp"></span>
+<script>
+function funcaoexecutar(){
+    let nome = document.getElementById("inputA").value;
+    let palavras = nome.split(" ");
+    let iniciais = "";
+    for(let i = 0; i < palavras.length; i++){
+        if(palavras[i] != "e" &&
+           palavras[i] != "de" &&
+           palavras[i] != "da" &&
+           palavras[i] != "do" &&
+           palavras[i] != "das" &&
+           palavras[i] != "dos" &&
+           palavras[i] != "di" &&
+           palavras[i] != "du"){
+            iniciais += palavras[i].charAt(0).toUpperCase();
+        }
+    }
+    document.getElementById("resp").innerHTML = iniciais;
+}
+</script>
+</body>
+</html>

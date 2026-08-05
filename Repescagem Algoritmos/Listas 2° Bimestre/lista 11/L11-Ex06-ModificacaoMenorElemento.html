@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<h1>Modificar pelo Menor Elemento</h1>
+</head>
+<body>
+<label>Digite os números separados por espaço (Utilize apenas um espaço):</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Calcular" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Menor elemento:</label>
+<span id="resp"></span>
+<br>
+<br>
+<label>Índice:</label>
+<span id="resp1"></span>
+<br>
+<br>
+<label>Novo vetor:</label>
+<span id="resp2"></span>
+<script>
+function funcaoexecutar(){
+    let vetor = document.getElementById("inputA").value.split(" ");
+    for(let i=0; i<vetor.length; i++){
+        vetor[i]=parseFloat(vetor[i]);
+    }
+
+    let menor = vetor[0];
+    let indice = 0;
+
+    for(let i=1;i<vetor.length;i++){
+        if(vetor[i] < menor){
+            menor = vetor[i];
+            indice = i;
+        }
+    }
+
+    let novoVetor = [];
+
+    for(let i=0;i<vetor.length;i++){
+        novoVetor[i] = vetor[i] / menor;
+    }
+    document.getElementById("resp").innerHTML = menor;
+    document.getElementById("resp1").innerHTML = indice;
+    document.getElementById("resp2").innerHTML = novoVetor.join(" ");
+}
+</script>
+</body>
+</html>

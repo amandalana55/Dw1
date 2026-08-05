@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fusão e Ordenação</title>
+</head>
+<body>
+    <h1>Fusão e Ordenação</h1>
+    <label>Digite o primeiro vetor:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <label>Digite o segundo vetor:</label>
+    <input type="text" id="inputB">
+    <br>
+    <br>
+    <input type="button" value="Ordenar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label>Resultado:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let vetor1 = document.getElementById("inputA").value.split(" ");
+            let vetor2 = document.getElementById("inputB").value.split(" ");
+            let vetor3 = [];
+
+            for (let i = 0; i < vetor1.length; i++) {
+                vetor3[i] = parseInt(vetor1[i]);
+            }
+            for (let i = 0; i < vetor2.length; i++) {
+                vetor3[vetor1.length + i] = parseInt(vetor2[i]);
+            }
+            for (let i = 0; i < vetor3.length - 1; i++) {
+                for (let j = 0; j < vetor3.length - 1; j++) {
+                    if (vetor3[j] > vetor3[j+1]) {
+                        let aux = vetor3[j];
+                        vetor3[j] = vetor3[j+1];
+                        vetor3[j+1] = aux;
+                    }
+                }
+            }
+            document.getElementById("resp").innerHTML = vetor3.join(",");
+        }
+    </script>
+</body>
+</html>

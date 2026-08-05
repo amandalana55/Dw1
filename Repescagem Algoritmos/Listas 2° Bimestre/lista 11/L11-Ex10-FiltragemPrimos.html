@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Filtragem de Primos</title>
+</head>
+<body>
+    <h1>Filtragem de Primos</h1>
+    <label>Digite os números separados por espaço:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="Verificar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label>Resultado:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+
+            let vetorK = document.getElementById("inputA").value.split(" ");
+            let vetorP = [];
+            let posicao = 0;
+
+            for (let i = 0; i < vetorK.length; i++) {
+                if (vetorK[i] == "") {
+                    continue;
+                }
+
+                let numero = parseInt(vetorK[i]);
+                let primo = true;
+
+                if (numero < 2) {
+                    primo = false;
+                } else {
+                    for (let j = 2; j < numero; j++) {
+
+                        if (numero % j == 0) {
+                            primo = false;
+                        }
+                    }
+                }
+                if (primo == true) {
+                    vetorP[posicao] = numero;
+                    posicao++;
+                }
+            }
+            if (vetorP.length == 0) {
+                document.getElementById("resp").innerHTML = "O vetor P ficou vazio.";
+            } else {
+                document.getElementById("resp").innerHTML = vetorP.join(" ");
+            }
+        }
+    </script>
+</body>
+</html>

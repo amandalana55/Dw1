@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<h1>Interpolação de Strings</h1>
+</head>
+<body>
+<label>Primeira palavra:</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<label>Segunda palavra:</label>
+<input type="text" id="inputB">
+<br>
+<br>
+<input type="button" value="Interpolar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Resposta:</label>
+<span id="resp"></span>
+<script>
+function funcaoexecutar(){
+    let palavra1 = document.getElementById("inputA").value;
+    let palavra2 = document.getElementById("inputB").value;
+    let novaPalavra = "";
+    let maior;
+    if (palavra1.length > palavra2.length){
+        maior = palavra1.length;
+    }else{
+        maior = palavra2.length;
+    }
+    for(let i = 0; i < maior; i++){
+        if(i < palavra1.length){
+            novaPalavra += palavra1[i];
+        }
+        if(i < palavra2.length){
+            novaPalavra += palavra2[i];
+        }
+    }
+    document.getElementById("resp").innerHTML = novaPalavra;
+}
+</script>
+</body>
+</html>

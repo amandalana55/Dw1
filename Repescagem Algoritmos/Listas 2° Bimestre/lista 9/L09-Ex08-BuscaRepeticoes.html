@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Letras repetidas consecutivas</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma palavra:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <br>
+    <br>
+    <script>
+        function funcaoexecutar() {
+            let palavra = document.getElementById("inputA").value;
+            let repeticao = "";
+          for (let i = 0; i < palavra.length-1; i++) {
+            if (palavra[i] == palavra[i+1]) {
+             repeticao= palavra[i]+palavra[i+1];
+            }
+            document.getElementById("resp").innerHTML=repeticao;
+          }
+        }
+    </script>
+</body>
+</html>

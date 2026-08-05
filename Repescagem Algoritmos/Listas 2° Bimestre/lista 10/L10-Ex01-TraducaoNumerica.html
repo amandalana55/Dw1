@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Tradução de números</h1>
+</head>
+<body>
+    <label for="inputA">Digite um número:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let numero = document.getElementById("inputA").value;
+            let valor = numero.split("");
+            let contador= "";
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 0; i < valor.length; i++) {
+                if(valor[i]=='1'){
+                valor[i]="Um";
+            }else if(valor[i]=='2'){
+                valor[i]="Dois";
+            }else if(valor[i]=='3'){
+                valor[i]="Três";
+            }else if(valor[i]=='4'){
+                valor[i]="Quatro";
+            }else if(valor[i]=='5'){
+                valor[i]="Cinco";
+            }else if(valor[i]=='6'){
+                valor[i]="Seis";
+            }else if(valor[i]=='7'){
+                valor[i]="Sete";
+            } else if(valor[i]=='8'){
+                valor[i]="Oito";
+            }else if(valor[i]=='9'){
+                valor[i]="Nove";
+            }else if(valor[i]=='0'){
+                valor[i]="Zero";
+            }
+            contador+=valor[i]+ ", ";
+            document.getElementById("resp").innerHTML = contador;
+        }
+    }
+    </script>
+</body>
+
+</html>

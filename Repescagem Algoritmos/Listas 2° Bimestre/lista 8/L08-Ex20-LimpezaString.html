@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Limpar strings</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma palavra:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let palavra = document.getElementById("inputA").value;
+            while (palavra.includes("  ")) {
+                palavra = palavra.replace("  ", " ");
+            }
+            document.getElementById("resp").innerHTML = palavra.trim();
+        }
+    </script>
+</body>
+</html>

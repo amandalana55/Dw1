@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <h1>Criptografar palavra</h1>
+</head>
+<body>
+<label>Digite uma palavra:</label>
+<input type="text" id="inputA">
+<br>
+<br>
+<input type="button" value="Criptografar" onclick="funcaoexecutar()">
+<br>
+<br>
+<label>Resposta:</label>
+<span id="resp"></span>
+<script>
+function funcaoexecutar(){
+    let palavra = document.getElementById("inputA").value;
+    let criptografada = "";
+    for(let i = 0; i < palavra.length; i++){
+        let ascii = palavra.charCodeAt(i);
+        criptografada += String.fromCharCode(ascii + 10);
+    }
+    document.getElementById("resp").innerHTML = criptografada;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Números Primos</title>
+</head>
+<body>
+    <h1>10 primeiros números primos maiores que 100</h1>
+    <input type="button" value="Gerar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label>Primos:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let vetor = [];
+            let numero = 101;
+            let posicao = 0;
+
+            while (posicao < 10) {
+                let primo = true;
+                for (let i = 2; i < numero; i++) {
+                    if (numero % i == 0) {
+                        primo = false;
+                    }
+                }
+                if (primo == true) {
+                    vetor[posicao] = numero;
+                    posicao++;
+                }
+                numero++;
+            }
+            document.getElementById("resp").innerHTML = vetor.join(" ");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Contar palavras</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma frase:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <label for="inputB">palavra:</label>
+    <input type="text" id="inputB">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Quantidade:</label>
+    <span id="resp"></span>
+    <br>
+    <br>
+    <script>
+        function funcaoexecutar() {
+            let frase = document.getElementById("inputA").value.toLowerCase();
+            let palavra= document.getElementById("inputB").value.toLowerCase();
+            let partes= frase.split(" ");
+            let contador = 0;
+          for (let i = 0; i < partes.length; i++) {
+            if (partes[i] == palavra) {
+             contador++;
+            }
+            document.getElementById("resp").innerHTML=contador;
+          }
+        }
+    </script>
+</body>
+</html>

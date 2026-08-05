@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Parcelas</h1>
+</head>
+<body>
+    <label for="inputA">Digite um valor:</label>
+    <input type="number" id="inputA">
+    <br>
+    <br>
+    <label for="inputB">Quatidade de meses:</label>
+    <input type="number" id="inputB">
+    <br>
+    <br>
+    <label for="inputC">Taxa de juros:</label>
+    <input type="number" id="inputC">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Parcelas:</label>
+    <span id="resp"></span>
+    <br>
+    <label for="resp1">Valor total:</label>
+    <span id="resp1"></span>
+    <script>
+        function funcaoexecutar() {
+            let valor = parseFloat(document.getElementById("inputA").value);
+            let meses = parseFloat(document.getElementById("inputB").value);
+            let taxa = parseFloat(document.getElementById("inputC").value);
+            let parcela = valor/meses;
+            let total = 0;
+            document.getElementById("resp").innerHTML = "";
+            for (let i = 1; i <=meses; i++) {
+                parcela+= parcela * (taxa/100)
+                total+= parcela
+                document.getElementById("resp").innerHTML+= " Mês " + i + " parcela: " + parcela.toFixed(2) + "<br>";
+            }
+            document.getElementById("resp1").innerHTML= total.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

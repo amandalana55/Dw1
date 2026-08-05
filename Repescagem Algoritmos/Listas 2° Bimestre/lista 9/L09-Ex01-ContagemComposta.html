@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Contar vogais e palavras</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma frase:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Quantidade de vogais:</label>
+    <span id="resp"></span>
+    <br>
+    <br>
+    <label for="resp1">Quantidade de palavras:</label>
+    <span id="resp1"></span>
+    <script>
+        function funcaoexecutar() {
+            let frase = document.getElementById("inputA").value.toLowerCase();
+            let qtvogal= 0;
+            let partes= frase.split(" ");
+            let qtpalavra = partes.length;
+            let j= 0;
+            while(j<frase.length){
+                if (frase[j] == 'a' || frase[j] == 'e' || frase[j] == 'i' || frase[j] == 'o' || frase[j] == 'u' || frase[j] == 'é') {
+                   qtvogal++; 
+                }
+                j++;
+            }
+            document.getElementById("resp").innerHTML = qtvogal;
+            document.getElementById("resp1").innerHTML = qtpalavra;
+        }
+    </script>
+</body>
+</html>

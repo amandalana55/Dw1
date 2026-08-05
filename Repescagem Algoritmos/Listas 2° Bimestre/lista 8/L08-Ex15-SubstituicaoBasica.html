@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Substituir "A"</h1>
+</head>
+<body>
+    <label for="inputA">Digite uma palavra:</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="escrever" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label for="resp">Resposta:</label>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let palavra = document.getElementById("inputA").value;
+            let novaPalavra= "";
+            document.getElementById("resp").innerHTML = "";
+            for (let j = 0; j < palavra.length; j++) {
+                if(palavra[j]=='a' ||palavra[j]=='A'){
+                   novaPalavra += "@";
+                }else{
+                    novaPalavra += palavra[j];
+                }
+            }
+            document.getElementById("resp").innerHTML= novaPalavra;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Estatísticas de Idade</h1>
+</head>
+<body>
+    <label for="inputA">Digite as idades (separadas por espaço):</label>
+    <input type="text" id="inputA">
+    <br>
+    <br>
+    <input type="button" value="Verificar" onclick="funcaoexecutar()">
+    <br>
+    <br>
+    <label>Resposta:</label>
+    <br>
+    <span id="resp"></span>
+    <script>
+        function funcaoexecutar() {
+            let frase = document.getElementById("inputA").value;
+            let idades = frase.split(" ");
+            let maiores21 = 0;
+            let bissextos = 0;
+            let soma = 0;
+            for (let i = 0; i < idades.length; i++) {
+                let idade = parseInt(idades[i]);
+                soma += idade;
+                if (idade > 21) {
+                    maiores21++;
+                }
+                let anoNascimento = 2026 - idade;
+                if ((anoNascimento % 4 == 0 && anoNascimento % 100 != 0) || (anoNascimento % 400 == 0)) {
+                    bissextos++;
+                }
+            }
+            let media = soma / idades.length;
+            document.getElementById("resp").innerHTML =
+                "Maiores de 21 anos: " + maiores21 + "<br>" +
+                "Nascidos em ano bissexto: " + bissextos + "<br>" +
+                "Soma das idades: " + soma + "<br>" +
+                "Média das idades: " + media.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>

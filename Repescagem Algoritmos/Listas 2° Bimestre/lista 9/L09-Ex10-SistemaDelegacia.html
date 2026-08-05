@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema da Delegacia</title>
+</head>
+<body>
+    <h1>Sistema da Delegacia de Springfield</h1>
+    <label>Tipo da ocorrência:</label>
+    <select id="tipo">
+        <option>Direção Perigosa</option>
+        <option>Barulho</option>
+        <option>Bebedeira</option>
+        <option>Homer</option>
+    </select>
+    <br>
+    <br>
+    <label>Gravidade:</label>
+    <select id="gravidade">
+        <option>Baixo</option>
+        <option>Médio</option>
+        <option>Alto</option>
+    </select>
+    <br>
+    <br>
+    <input type="button" value="Registrar Ocorrência" onclick="registrar()">
+    <input type="button" value="Mostrar Resumo" onclick="resumo()">
+    <br>
+    <br>
+    <span id="resp"></span>
+    <script>
+        let clancy = 0;
+        let eddie = 0;
+        let lou = 0;
+        let homer = 0;
+        let direcao = 0;
+        let total = 0;
+
+        function registrar() {
+            let tipo = document.getElementById("tipo").value;
+            let gravidade = document.getElementById("gravidade").value;
+            total++; 
+
+            if (tipo == "Homer") {
+                clancy++;
+                homer++;
+            } else {
+                if (clancy <= eddie && clancy <= lou) {
+                    clancy++;
+                } else if (eddie <= lou) {
+                    eddie++;
+                } else {
+                    lou++;
+                }
+            }
+            if (tipo == "Direção Perigosa") {
+                direcao++;
+            }
+            document.getElementById("resp").innerHTML =
+                "Ocorrência cadastrada com sucesso!";
+
+        }
+
+        function resumo() {
+            let percentual = 0;
+
+            if (total > 0) {
+                percentual = (direcao * 100) / total;
+            }
+            document.getElementById("resp").innerHTML =
+                "<b>Resumo dos Chamados</b><br><br>" +
+                "Clancy: " + clancy + " ocorrência(s)<br>" +
+                "Eddie: " + eddie + " ocorrência(s)<br>" +
+                "Lou: " + lou + " ocorrência(s)<br><br>" +
+                "Ocorrências do tipo Homer: " + homer + "<br>" +
+                "Percentual de Direção Perigosa: " + percentual.toFixed(2) + "%";
+        }
+    </script>
+</body>
+</html>
